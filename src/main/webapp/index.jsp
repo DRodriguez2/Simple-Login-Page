@@ -10,14 +10,21 @@
 			<legend>User Login</legend>
 			<p>
 				User name: <input type="text" name="username"><br>
-				Password: <input type="password" name="password"><br>
-				<input type="submit">
+				Password: <input type="password" name="password"><br> <input
+					type="submit">
 			</p>
 		</fieldset>
 	</form>
-	<c:if test="${loginResult != null}">
-			${loginResult}
-	</c:if>
-
+	<p>
+		<a href="Register.jsp">Register</a>
+	</p>
+	<br> ${result}
+	<%
+		if(!(request.getParameter("registerSuccess") == null)) {
+			if(request.getParameter("registerSuccess").equals("true")) {
+				out.println("<SPAN style='color:green'>Registration Successful</SPAN>");
+			} else out.println("<SPAN style='color:red'>Unable to register, try again later</SPAN>");
+		}
+	%>
 </body>
 </html>
