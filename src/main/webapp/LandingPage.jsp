@@ -9,5 +9,8 @@
 </head>
 <body>
 Welcome <% out.print(session.getAttribute("username")); %>!
+	<p>
+		<a href="index.jsp">Logout</a>
+	</p>
 </body>
 </html>
